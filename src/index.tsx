@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-
 import rtlPlugin from 'stylis-plugin-rtl';
 import {CacheProvider} from '@emotion/react';
 import createCache from '@emotion/cache';
 import {prefixer} from 'stylis';
-
+import { faIR } from '@mui/material/locale';
 
 var rtl = true
 
@@ -30,9 +28,14 @@ const cacheRtl = createCache(optCache);
 const theme = createTheme({
     direction: rtl ? 'rtl' : 'ltr',
     palette: {
-        mode: 'dark',
+        mode: 'light',
     },
-});
+    typography: {
+        fontFamily: [
+            '"iranyekan"',
+        ].join(','),
+    },
+},faIR);
 
 
 ReactDOM.render(
